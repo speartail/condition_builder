@@ -1,0 +1,7 @@
+= condition_builder
+
+Description goes here.
+
+== Copyright
+
+Copyright (c) 2009 Peter Hoeg. See LICENSE for details.

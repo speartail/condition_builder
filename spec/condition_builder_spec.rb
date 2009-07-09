@@ -34,6 +34,10 @@ describe ConditionBuilder do
     @cb.kind.should == :and
   end
 
+  it 'should give a basic response to .to_s' do
+    @cb.to_s.length.should_not == 0
+  end
+
   describe 'single condition/criterion' do
 
     before(:each) do

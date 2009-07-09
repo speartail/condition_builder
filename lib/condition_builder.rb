@@ -1,3 +1,5 @@
+require 'json'
+
 class ConditionBuilder
   
   DEFAULT_KIND = :and
@@ -43,7 +45,7 @@ class ConditionBuilder
   end
 
   def to_s
-    "conditions: #{self.conditions.to_json}, criteria: #{self.criteria.to_json}"
+    "conditions: #{@_cond.to_json}, criteria: #{@_crit.to_json}"
   end
 
   def valid?

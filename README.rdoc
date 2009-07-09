@@ -1,6 +1,24 @@
 = condition_builder
 
-Description goes here.
+ConditionBuilder generates conditions and criteria for use in ActiveRecord .find
+statements to avoid manually having to construct a string of conditions and
+the releveant hash with values.
+
+It does not support fancy dependencies between the statements as it would make
+the syntax so complicated that people might as well generate the condition
+string and hash themselves.
+
+= Usage
+
+ cb = ConditionBuilder.new
+ # add a condition "user_id < 4" in descending order
+ cb.add('user_id <', 4, :desc)
+ # add a condition "user_location like '%abc'" in ascending order
+ cb.add('user_location like', '%abc', :asc)
+ # add a condition "department_id = 18"
+ cb.add('department_id = ', 18)
+ 
+ User.find(:all, :conditions => cb.conditions, :order => cb.order, cb.criteria)
 
 == Copyright
 

@@ -59,6 +59,61 @@ describe ConditionBuilder do
     it 'should generate a criterion' do
       @cb.criteria[:something].should == 'fff'
     end
+
+    it 'should not generate an ordering' do
+      @cb.order.length.should == 0
+    end
+  end
+
+  describe 'single condition/criterion with ordering' do
+
+    before(:each) do
+      @cb.add('something =', 'fff', :asc)
+    end
+
+    it 'should be valid' do
+      @cb.should be_valid
+    end
+
+    it 'should have just one condition and criterion' do
+      @cb.statements.should == 1
+    end
+
+    it 'should generate a condition' do
+      @cb.conditions.should == 'something = :something'
+    end
+
+    it 'should generate a criterion' do
+      @cb.criteria[:something].should == 'fff'
+    end
+
+    it 'should generate an ordering' do
+      @cb.order.should == 'something ASC'
+    end
+  end
+
+  describe 'being passed an array' do
+
+    before(:each) do
+      @cb.add('something in', [ 1, 2, 3 ])
+    end
+
+    it 'should be valid' do
+      @cb.should be_valid
+    end
+
+    it 'should have just one condition and criterion' do
+      @cb.statements.should == 1
+    end
+
+    it 'should generate a condition' do
+      @cb.conditions.should == 'something in (:something)'
+    end
+
+    it 'should generate a criterion' do
+      @cb.criteria[:something].should == [1, 2, 3]
+    end
+
   end
 
   describe 'multiple conditions/criteria' do
@@ -141,6 +196,35 @@ describe ConditionBuilder do
         @cb.criteria[:something].should == 'fff'
         @cb.criteria[:something_else].should == 123
       end
+    end
+  end
+
+  describe 'multiple conditions/criteria with ordering' do
+
+    before(:each) do
+      @cb.add('something =', 'fff', :asc)
+      @cb.add('something_else >', 123, :desc)
+    end
+
+    it 'should be valid' do
+      @cb.should be_valid
+    end
+
+    it 'should have two conditions and criteria' do
+      @cb.statements.should == 2
+    end
+
+    it 'should generate conditions' do
+      @cb.conditions.should == 'something = :something AND something_else > :something_else'
+    end
+
+    it 'should generate criteria' do
+      @cb.criteria[:something].should == 'fff'
+      @cb.criteria[:something_else].should == 123
+    end
+
+    it 'should generate an ordering' do
+      @cb.order.should == 'something ASC, something_else DESC'
     end
   end
 

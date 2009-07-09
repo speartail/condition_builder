@@ -19,6 +19,7 @@ Gem::Specification.new do |s|
      "README.rdoc",
      "Rakefile",
      "VERSION.yml",
+     "condition_builder.gemspec",
      "lib/condition_builder.rb",
      "spec/condition_builder_spec.rb",
      "spec/spec_helper.rb"

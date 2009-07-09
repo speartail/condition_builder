@@ -20,6 +20,17 @@ string and hash themselves.
  
  User.find(:all, :conditions => cb.conditions, :order => cb.order, cb.criteria)
 
+= Website
+
+http://github.com/peterhoeg/condition_builder
+
+= Requirements
+
+ConditionBuilder has been tested with the following versions
+
+== Ruby
+* 1.8.7
+
 == Copyright
 
 Copyright (c) 2009 Peter Hoeg. See LICENSE for details.

@@ -5,10 +5,10 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "condition_builder"
-    gem.summary = %Q{TODO}
+    gem.summary = "This gem assists in creating conditions and criteria for use in ActiveRecord .find statements."
     gem.email = "peter@hoeg.com"
     gem.homepage = "http://github.com/peterhoeg/condition_builder"
-    gem.authors = ["Peter Hoeg"]
+    gem.authors = ["Peter Hoeg", "Northwind Technologies Pte Ltd"]
     gem.rubyforge_project = "condition_builder"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
@@ -29,7 +29,6 @@ Spec::Rake::SpecTask.new(:rcov) do |spec|
   spec.pattern = 'spec/**/*_spec.rb'
   spec.rcov = true
 end
-
 
 task :default => :spec
 

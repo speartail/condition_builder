@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Peter Hoeg", "Northwind Technologies Pte Ltd"]
-  s.date = %q{2009-07-09}
+  s.date = %q{2009-07-10}
   s.email = %q{peter@hoeg.com}
   s.extra_rdoc_files = [
     "LICENSE",
@@ -28,7 +28,7 @@ Gem::Specification.new do |s|
   s.homepage = %q{http://github.com/peterhoeg/condition_builder}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
-  s.rubyforge_project = %q{condition_builder}
+  s.rubyforge_project = %q{cbuilder}
   s.rubygems_version = %q{1.3.1}
   s.summary = %q{This gem assists in creating conditions and criteria for use in ActiveRecord .find statements.}
   s.test_files = [

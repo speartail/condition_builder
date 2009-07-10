@@ -9,7 +9,7 @@ begin
     gem.email = "peter@hoeg.com"
     gem.homepage = "http://github.com/peterhoeg/condition_builder"
     gem.authors = ["Peter Hoeg", "Northwind Technologies Pte Ltd"]
-    gem.rubyforge_project = "condition_builder"
+    gem.rubyforge_project = "cbuilder"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
 

@@ -47,3 +47,9 @@ Rake::RDocTask.new do |rdoc|
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
 
+desc 'push source to github/rubyforge'
+task :push do
+  [ "origin", "rubyforge" ].each do |h|
+    sh "git push #{h}"
+  end
+end

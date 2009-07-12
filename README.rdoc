@@ -1,12 +1,15 @@
 = condition_builder
 
-ConditionBuilder generates conditions and criteria for use in ActiveRecord .find
-statements to avoid manually having to construct a string of conditions and
-the releveant hash with values.
+ConditionBuilder generates conditions and criteria for use in ActiveRecord .find statements to avoid manually having to construct a string of conditions and the releveant hash with values.
 
-It does not support fancy dependencies between the statements as it would make
-the syntax so complicated that people might as well generate the condition
-string and hash themselves.
+It does not support fancy dependencies between the statements as it would make the syntax so complicated that people might as well generate the condition string and hash themselves.
+
+= Installation
+
+Please install it from rubyforge (github is not generating this gem as it
+insists on prefixing the gem name with the github username).
+
+ sudo gem install condition_builder
 
 = Usage
 
@@ -17,7 +20,7 @@ string and hash themselves.
  cb.add('user_location like', '%abc', :asc)
  # add a condition "department_id = 18"
  cb.add('department_id = ', 18)
- 
+
  User.find(:all, :conditions => cb.conditions, :order => cb.order, cb.criteria)
 
 = Website
@@ -30,6 +33,10 @@ ConditionBuilder has been tested with the following versions
 
 == Ruby
 * 1.8.7
+
+== Rails
+* 2.1.2
+* 2.3.2
 
 == Copyright
 
